@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Map</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet Routing Machine CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="PPT/logo_c1.png" alt="Logo" class="navbar-logo">
+            MAP
+        </div>
+        
+    <!-- Search Box -->
+    <div class="navbar-search">
+        <input list="suggestions" type="text" id="searchBox" placeholder="Search location...">
+        <datalist id="suggestions"></datalist>
+    </div>
+
+        <!-- Menu Items -->
+        <ul class="navbar-menu">
+            <li><a href="#" onclick="goToLocation('Home')" class="nav__link">HOME</a></li>
+            <li><a href="#" onclick="goToLocation('Canteen')" class="nav__link">CANTEEN</a></li>
+            <li><a href="#" onclick="goToLocation('Admin Office')" class="nav__link">ADMIN OFFICE</a></li>
+            <li><a href="#" onclick="goToLocation('Xerox')" class="nav__link">XEROX</a></li>
+            <li><a href="#" onclick="goToLocation('Bank')" class="nav__link">BANK</a></li>
+            <li><a href="#" onclick="goToLocation('Hospital')" class="nav__link">HOSPITAL</a></li>
+        </ul>
+
+        <!-- Toggler Button for Mobile -->
+        <button class="navbar-toggler" onclick="toggleMenu()">&#9776;</button>
+    </nav>
+
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!-- Leaflet Routing Machine JS -->
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+    <!-- Leaflet Control Geocoder JS -->
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
