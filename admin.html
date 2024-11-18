@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <nav class="admin-navbar">
+        <h1>Admin Dashboard</h1>
+        <ul>
+            <li><a href="#" data-section="dashboard">Dashboard</a></li>
+            <li><a href="#" data-section="shop-requests">Shop Requests</a></li>
+            <li><a href="#" data-section="user-management">User Management</a></li>
+            <li><a href="#" data-section="location-management">Location Management</a></li>
+            <li><a href="#" data-section="settings">Settings</a></li>
+        </ul>
+    </nav>
+
+    <div id="loader">Loading...</div>
+
+    <div class="admin-content">
+        <section id="dashboard" class="section active">
+            <h2>Dashboard</h2>
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h3>Total Users</h3>
+                    <p id="total-users">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Shops</h3>
+                    <p id="total-shops">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending Requests</h3>
+                    <p id="pending-requests">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Locations</h3>
+                    <p id="active-locations">0</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="shop-requests" class="section">
+            <h2>Shop Requests</h2>
+            <div class="filter-section">
+                <label for="status-filter">Filter by Status:</label>
+                <select id="status-filter">
+                    <option value="all">All</option>
+                    <option value="pending">Pending</option>
+                    <option value="approved">Approved</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Shop Name</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="user-management" class="section">
+            <h2>User Management</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="location-management" class="section">
+            <h2>Location Management</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Location ID</th>
+                        <th>Location Name</th>
+                        <th>Address</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="settings" class="section">
+            <h2>Settings</h2>
+            <div class="settings-container">
+                <div class="setting-group">
+                    <h3>Application Settings</h3>
+                    <div class="setting-item">
+                        <label>Dark Mode</label>
+                        <input type="checkbox" id="dark-mode-toggle">
+                    </div>
+                    <div class="setting-item">
+                        <label>Notifications</label>
+                        <input type="checkbox" id="notifications-toggle">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

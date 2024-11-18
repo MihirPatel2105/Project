@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Map</title>
-    
+
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <!-- Leaflet Routing Machine CSS -->
@@ -12,20 +13,38 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <!-- Navigation Bar -->
     <nav class="navbar">
+
+        <!-- Settings Button (Moved to the left side) -->
+        <div class="navbar-settings-container">
+            <img src="PPT/setting.png" alt="Settings" class="navbar-settings" id="settingsButton">
+
+            <!-- Settings Dropdown List -->
+            <ul class="settings-list" id="settingsList">
+                <li><a href="#">Theme</a></li>
+                <li><a href="#">Language & Localization</a></li>
+                <li><a href="#">Favorite Locations</a></li>
+                <li><a href="#">Location Sharing</a></li>
+                <li><a href="#">360 View</a></li>
+                <li><a href="#">Floor & Room Navigation</a></li>
+                <li><a href="admin.html">Map Manager</a></li>
+            </ul>
+        </div>
+
         <div class="navbar-brand">
             <img src="PPT/logo_c1.png" alt="Logo" class="navbar-logo">
             MAP
         </div>
-        
-    <!-- Search Box -->
-    <div class="navbar-search">
-        <input list="suggestions" type="text" id="searchBox" placeholder="Search location...">
-        <datalist id="suggestions"></datalist>
-    </div>
+
+        <!-- Search Box -->
+        <div class="navbar-search">
+            <input list="suggestions" type="text" id="searchBox" placeholder="Search location...">
+            <datalist id="suggestions"></datalist>
+        </div>
 
         <!-- Menu Items -->
         <ul class="navbar-menu">
@@ -54,4 +73,5 @@
     <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
+
 </html>

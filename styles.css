@@ -35,6 +35,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
+    margin-right: 20px; /* Space between logo and settings */
 }
 
 .navbar-logo {
@@ -50,14 +51,16 @@ body {
 .navbar-search {
     flex-grow: 1; /* Allow the search box to grow and fill available space */
     margin: 0 20px;
+    max-width: 400px; /* Optional: Limit the width on larger screens */
 }
 
 .navbar-search input {
     width: 100%;
-    padding: 5px 10px;
+    padding: 8px 12px; /* More padding for better UX */
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     font-size: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
 }
 
 .navbar-menu {
@@ -103,8 +106,58 @@ body {
     transform: translateY(-2px);
 }
 
+/* Settings Button Styles */
+.navbar-settings-container {
+    position: relative; /* Ensure the dropdown is positioned relative to the container */
+}
+
+.navbar-settings {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    margin-right: 10px; /* Add space between the settings button and the logo */
+}
+
+/* Settings List Dropdown */
+.settings-list {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 40px; /* Adjust to space the dropdown below the button */
+    left: 0; /* Align directly with the settings button */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    list-style-type: none;
+    padding: 10px;
+    z-index: 1000;
+    min-width: 150px; /* Ensure dropdown has a minimum width */
+}
+
+/* Show settings list when toggled */
+.settings-list.show {
+    display: block;
+}
+
+.settings-list li {
+    margin-bottom: 10px;
+}
+
+.settings-list li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.settings-list li a:hover {
+    color: #007BFF; /* Hover effect */
+}
+
 /* Responsive Menu Styles */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px; /* Less padding on smaller screens */
+    }
+
     .navbar-toggler {
         display: block;
     }
@@ -119,6 +172,7 @@ body {
         width: 100%;
         max-height: 0;
         overflow: hidden;
+        transition: max-height 0.3s ease-in-out; /* Add smooth open/close animation */
     }
 
     .navbar-menu.show {
@@ -131,10 +185,18 @@ body {
         text-align: center;
     }
     
+    .navbar-search {
+        margin: 10px 0; /* Adjust margin on mobile */
+        max-width: 90%; /* Adjust width on mobile */
+    }
+
+    .navbar-settings {
+        margin-left: 10px; /* Adjust margin for mobile */
+    }
 }
 
 /* Map Container */
 #map {
-    height: calc(100vh - 70px); /* Full height minus the navbar height */
+    height: calc(100vh - 70px); /* Full height minus navbar height */
     width: 100%;    /* Full width */
 }

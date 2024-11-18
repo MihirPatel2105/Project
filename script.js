@@ -177,6 +177,18 @@ document.getElementById('searchBox').addEventListener('input', function (e) {
     updateSuggestions(e.target.value);
 });
 
+// Toggle the settings list on click
+document.getElementById('settingsButton').addEventListener('click', function () {
+    var settingsList = document.getElementById('settingsList');
+    // Toggle the 'show' class to display/hide the settings list
+    if (settingsList.classList.contains('show')) {
+        settingsList.classList.remove('show');
+    } else {
+        settingsList.classList.add('show');
+    }
+});
+
+
 // Add a search functionality using the search box
 document.getElementById('searchBox').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') { // Check if 'Enter' key is pressed
